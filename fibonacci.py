@@ -34,10 +34,14 @@ print(firstDigitDict)
 # percent of firstDigit
 first_numbers_percent = {}
 for key,num in firstDigitDict.items():
-    first_numbers_percent[key]= num/100
+    first_numbers_percent[key]= num/250
 
 
 print(first_numbers_percent)
 
-#Drawing
-import
+# Plotting
+import matplotlib.pyplot as plt
+x_values = [1,2,3,4,5,6,7,8,9,10]
+y_values = [67,43,32,23,21,15,15,14,11,9]
+plt.plot(x_values,y_values)
+plt.show()
