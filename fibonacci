@@ -32,3 +32,12 @@ while (num < 250):
 print(firstDigitDict)
 
 # percent of firstDigit
+first_numbers_percent = {}
+for key,num in firstDigitDict.items():
+    first_numbers_percent[key]= num/100
+
+
+print(first_numbers_percent)
+
+#Drawing
+import
