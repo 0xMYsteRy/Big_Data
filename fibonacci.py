@@ -1,47 +1,99 @@
-list = [1, 1]
+import matplotlib.pyplot as plt
+import numpy as np
+
+fibonacci_list = [1, 1]
 
 i = 2
-line = 0
 while (i <= 250):
-    a = list[i - 2] + list[i - 1]
-    list.append(a)
+    a = fibonacci_list[i - 2] + fibonacci_list[i - 1]
+    fibonacci_list.append(a)
     i = i + 1
-    line += 1
-print(list)
-# print(line)
+print("The first 250 fibonacci numbers: ")
+print(fibonacci_list)
+print("----------*****----------")
+
 
 # find the first digit
 def firstDigit(num):
     n = num
-    while (n > 10):
+    while n > 10:
         n = n // 10
     return n
+
+
+# find the last digit
+def lastDigit(num):
+    n = num
+    return n % 10
+
 
 # count the first digit
 num = 0
 firstDigitDict = {}
-
-while (num < 250):
-    key = firstDigit(list[num])
+while num < 250:
+    key = firstDigit(fibonacci_list[num])
     if key not in firstDigitDict:
         firstDigitDict[key] = 1
     else:
         firstDigitDict[key] += 1
     num += 1
-
+print("The first digits are: ")
 print(firstDigitDict)
+
+# count the last digit
+num2 = 0
+lastDigitDict = {}
+while num2 < 250:
+    key2 = lastDigit(fibonacci_list[num2])
+    if key2 not in lastDigitDict:
+        lastDigitDict[key2] = 1
+    else:
+        lastDigitDict[key2] += 1
+    num2 += 1
+print("The last digits are:")
+print(lastDigitDict)
+print("----------*****----------")
 
 # percent of firstDigit
 first_numbers_percent = {}
-for key,num in firstDigitDict.items():
-    first_numbers_percent[key]= num/250
+for key, num in firstDigitDict.items():
+    first_numbers_percent[key] = 100 * num / 250
 
-
+print("First digit percentile: ")
 print(first_numbers_percent)
 
-# Plotting
-import matplotlib.pyplot as plt
-x_values = [1,2,3,4,5,6,7,8,9,10]
-y_values = [67,43,32,23,21,15,15,14,11,9]
-plt.plot(x_values,y_values)
+# percent of lastDigit
+last_numbers_percent = {}
+for key2, num2 in lastDigitDict.items():
+    last_numbers_percent[key2] = num2 / 2.5
+
+print("Last digit percentile: ")
+print(lastDigitDict)
+
+# First digit plotting
+x_values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+y_values = [26.8, 17.2, 12.8, 9.2, 8.4, 6.0, 6.0, 5.6, 4.4, 3.6]
+plt.title("Fibonacci First Digit Distribution")
+plt.xlabel("Numbers")
+plt.ylabel("Percentile")
+plt.bar(x_values, y_values, color='darkblue')
+plt.scatter(x_values, y_values, s=10, c='burlywood')  # dot
+plt.figure(dpi=256, figsize=(50, 30))
 plt.show()
+
+# Last digit plotting
+x_values2 = []
+y_values2 = []
+
+x_values2 = list(lastDigitDict.keys())
+y_values2 = list(last_numbers_percent.values())
+plt.title("Fibonacci Last Digit Distribution")
+plt.xlabel("Numbers")
+plt.ylabel("Percentile")
+plt.bar(x_values2, y_values2, color='dodgerblue')
+plt.scatter(x_values2, y_values2, s=10, c='burlywood')  # dot
+plt.figure(dpi=256, figsize=(50, 30))
+
+plt.show()
+
+
