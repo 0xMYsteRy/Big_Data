@@ -73,10 +73,10 @@ print(lastDigitDict)
 # First digit plotting
 x_values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 y_values = [26.8, 17.2, 12.8, 9.2, 8.4, 6.0, 6.0, 5.6, 4.4, 3.6]
-plt.title("Fibonacci First Digit Distribution")
+plt.title("Fibonacci First Digit Distribution (Sample n = 250)")
 plt.xlabel("Numbers")
 plt.ylabel("Percentile")
-plt.bar(x_values, y_values, color='darkblue')
+plt.bar(x_values, y_values, color='royalblue')
 plt.scatter(x_values, y_values, s=10, c='burlywood')  # dot
 plt.figure(dpi=256, figsize=(50, 30))
 plt.show()
@@ -87,10 +87,10 @@ y_values2 = []
 
 x_values2 = list(lastDigitDict.keys())
 y_values2 = list(last_numbers_percent.values())
-plt.title("Fibonacci Last Digit Distribution")
+plt.title("Fibonacci Last Digit Distribution (Sample n = 250)")
 plt.xlabel("Numbers")
 plt.ylabel("Percentile")
-plt.bar(x_values2, y_values2, color='dodgerblue')
+plt.bar(x_values2, y_values2, color='crimson')
 plt.scatter(x_values2, y_values2, s=10, c='burlywood')  # dot
 plt.figure(dpi=256, figsize=(50, 30))
 
