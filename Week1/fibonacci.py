@@ -92,8 +92,10 @@ plt.xlabel("Numbers")
 plt.ylabel("Percentile")
 plt.bar(x_values2, y_values2, color='crimson')
 plt.scatter(x_values2, y_values2, s=10, c='burlywood')  # dot
-plt.figure(dpi=256, figsize=(50, 30))
+plt.figure(dpi=128, figsize=(10, 6))
 
 plt.show()
+
+# Requirement: x,y label
 
 
